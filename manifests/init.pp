@@ -36,7 +36,7 @@ class mco_yum (
   }
   if $::fact_is_puppetmaster {
     #only deploy the ddl if we're a puppetmaster
-    file {"${mcodir}/agent/rpmverify.ddl":
+    file {"${mcodir}/agent/yum.ddl":
       source => "puppet:///modules/${module_name}/yum.ddl",
     }
   }
