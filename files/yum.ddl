@@ -5,7 +5,7 @@
    :license           => "Apache License, Version 2.0",
    :version           => "1.0",
    :url               => "http://nathanpowell.org/",
-   :timeout            => 300
+   :timeout           => 300
 
 action "simpleresponse" , :description => "Responds on execution" do
   display :always
@@ -16,18 +16,17 @@ action "simpleresponse" , :description => "Responds on execution" do
 end
 
 ["install", "remove", "reinstall"].each do |act|
-    action act, :description => "#{act.capitalize} a package" do
-        input :package,
-              :prompt      => "Package Name",
-              :description => "Package to #{act}",
-              :type        => :string,
-              :validation  => '.',
-              :optional    => false,
-              :maxlength   => 90
-
-        output :output,
-               :description => "Output from yum",
-               :display_as  => "Output"
+  action act, :description => "#{act.capitalize} a package" do
+    input :package,
+      :prompt      => "Package Name",
+      :description => "Package to #{act}",
+      :type        => :string,
+      :validation  => '.',
+      :optional    => false,
+      :maxlength   => 90
+    output :output,
+      :description => "Output from yum",
+      :display_as  => "Output"
     end
 end
 
@@ -38,7 +37,7 @@ action "update", :description => "Update all packages to current patch levels" d
     :display_as  => "Output"
 end
 
-action "update-and-reboot", :description => "Update all packages to current, and reboot" do
+action "update-and-reboot", :description => "Update all packages to current and reboot" do
   output :output,
     :description => "Output from Yum",
     :display_as  => "Output"
