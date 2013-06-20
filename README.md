@@ -30,7 +30,7 @@ Patch all hosts to the latest patch level (either by repo, rhn or satellite sync
 
 Patch all hosts to the latest patch level and reboot afterwards  (either by repo, rhn or satellite sync):
 
-     sudo mco rpc yum update-and-reboot # note this is the same thing as concurrently running `yum update -y` on ALL hosts
+     sudo mco rpc yum update-and-reboot # note this is the same thing as concurrently running `yum update -y&&shutdown -r now` on ALL hosts
 
 Stage all available patches on servers (that have the downloadonly plugin)
 
